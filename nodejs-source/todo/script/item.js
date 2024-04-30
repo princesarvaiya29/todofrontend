@@ -157,19 +157,5 @@ app.controller('alertMessagesController', function ($scope) {
 
 // Service that provides items operations
 app.factory('itemService', function ($resource) {
-    return $resource('http://_BACKEND_/todo/api/items/:id');
-});
-
-
-// Create a controller that handles host information
-app.controller('hostController', function ($scope, hostService) {
-        $scope.host = hostService.get();
-});
-
-//Service that provides host operations
-app.factory('hostService', function ($resource) {
-    return $resource('http://_BACKEND_/todo/api/host', null,
-                {
-                'get': { method:'GET' }
-                });
+    return $resource('api/items/:id');
 });
